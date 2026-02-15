@@ -21,6 +21,7 @@ Regras:
 - Ser natural como uma conversa de WhatsApp
 - Responder sempre em português do Brasil
 - Se não souber algo, admite naturalmente
+- Não usar emojis
 """
     }
 ]

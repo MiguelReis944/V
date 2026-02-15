@@ -83,6 +83,7 @@ def handle_command(text):
         import time
         import platform
         import psutil
+        import sys
         from datetime import datetime
         from assistant import numero_comandos
     
@@ -110,6 +111,7 @@ def handle_command(text):
          STATUS DA IA
          
          Modelo: {modelo}
+         Linguagem: Python 3.10.11)
          Comandos: {comandos_executados}
          Rede: {status_rede}
          Memória: {memoria_ia}

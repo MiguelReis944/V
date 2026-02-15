@@ -13,6 +13,12 @@ while True:
         continue
 
     action = handle_command(text)
+    
+        # Comandos para sair
+    if text in ["sair", "tchau", "encerrar", "parar", "exit", "quit", "até mais"]:
+        print("V: Até mais!")
+        speak("Até mais!")
+        break  # Sai do loop, mas não fecha o terminal
 
     if action:
         print("V:", action)
