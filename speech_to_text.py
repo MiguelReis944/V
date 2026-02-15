@@ -1,6 +1,8 @@
 import speech_recognition as sr
+from terminal_style import Cores
 
 def listen():
+    estilo = Cores
 
     r = sr.Recognizer()
 
@@ -15,7 +17,7 @@ def listen():
 
     try:
         text = r.recognize_google(audio, language="pt-BR,en-US")
-        print("Você disse:", text)
+        print(estilo.usuario(text))
         return text.lower()
     except:
         return ""

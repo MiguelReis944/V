@@ -2,10 +2,12 @@ from speech_to_text import listen
 from ai_response import ask_ai
 from command_handler import handle_command
 from text_to_speech import speak
+from terminal_style import Cores
 
 numero_comandos = 0
 
 while True:
+    estilo = Cores
 
     text = listen()
 
@@ -16,16 +18,16 @@ while True:
     
         # Comandos para sair
     if text in ["sair", "tchau", "encerrar", "parar", "exit", "quit", "até mais"]:
-        print("V: Até mais!")
+        print(estilo.assistente("Até mais!"))
         speak("Até mais!")
-        break  # Sai do loop, mas não fecha o terminal
+        break
 
     if action:
-        print("V:", action)
+        print(estilo.assistente(action))
         speak(action)
         numero_comandos = numero_comandos + 1
     else:
         reply = ask_ai(text)
-        print("V:", reply)
+        print(estilo.assistente(reply))
         speak(reply)
         numero_comandos = numero_comandos + 1

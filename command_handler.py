@@ -70,7 +70,6 @@ def handle_command(text):
          INFORMAÇÕES DO SISTEMA
 
          Usuário: {usuario}
-         Pasta: {pasta_atual}
          Sistema: {sistema} {versao}
          CPU: {cpu_uso} em uso
          Processador: {cpu[:50]}...
@@ -83,12 +82,12 @@ def handle_command(text):
         import time
         import platform
         import psutil
-        import sys
         from datetime import datetime
         from assistant import numero_comandos
     
         # Informações da IA
         comandos_executados = numero_comandos
+        pasta_atual = os.getcwd()
     
         # Ping (teste de conexão)
         try:
@@ -111,7 +110,8 @@ def handle_command(text):
          STATUS DA IA
          
          Modelo: {modelo}
-         Linguagem: Python 3.10.11)
+         Linguagem: Python 3.10)
+         Pasta: {pasta_atual}
          Comandos: {comandos_executados}
          Rede: {status_rede}
          Memória: {memoria_ia}
