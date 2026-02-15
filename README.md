@@ -34,15 +34,54 @@ Ele conversa naturalmente, entende comandos e responde com uma voz amigável —
 
 ## 📦 Instalação
 
-### 1. Clone ou baixe este projeto
+# Nome do Projeto (V)
 
+[Breve descrição do que o projeto faz]
+
+## Pré-requisitos
+
+Antes de começar, você vai precisar ter o Python instalado em sua máquina.
+
+## Instalação e Execução
+
+Para garantir que todas as dependências sejam instaladas corretamente sem conflitos, é **necessário** utilizar um ambiente virtual (`venv`).
+
+### 1. Clonar o repositório
 ```bash
+git clone [https://github.com/MiguelReis944/V.git](https://github.com/MiguelReis944/V.git)
 cd V
 ```
 
 ---
 
-### 2. Instale as dependências do Python
+### 2. Criar o ambiente virtual
+
+```bash
+# No Windows:
+python -m venv venv
+
+# No Linux/macOS:
+python3 -m venv venv
+```
+
+---
+
+### 3. Instale as dependências do Python
+
+```bash
+# No Windows (Command Prompt):
+venv\Scripts\activate
+
+# No Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+
+# No Linux/macOS:
+source venv/bin/activate
+```
+
+---
+
+### 4. Instale as dependências do Python
 
 ```bash
 pip install -r requirements.txt
@@ -50,7 +89,7 @@ pip install -r requirements.txt
 
 ---
 
-### 3. Instale o Ollama
+### 5. Instale o Ollama
 
 Baixe e instale através do site oficial.
 
@@ -62,7 +101,7 @@ ollama pull mistral
 
 ---
 
-### 4. Execute o assistente
+### 6. Execute o assistente
 
 ```bash
 python assistant.py
