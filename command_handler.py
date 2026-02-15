@@ -72,7 +72,7 @@ def handle_command(text):
          Usuário: {usuario}
          Sistema: {sistema} {versao}
          CPU: {cpu_uso} em uso
-         Processador: {cpu[:50]}...
+         Processador: {cpu}
          RAM: {memoria_usada} usado de {memoria_total}
          Disco livre: {disco_livre}
          Data/Hora: {agora}
@@ -93,7 +93,7 @@ def handle_command(text):
         try:
             import requests
             inicio = time.time()
-            requests.get('https://www.google.com', timeout=2)
+            requests.get('https://www.google.com', timeout=0.3)
             ping = int((time.time() - inicio) * 1000)
             status_rede = f"{ping} ms ( Online)"
         except:
