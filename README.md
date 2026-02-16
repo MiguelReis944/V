@@ -26,7 +26,7 @@ Ele conversa naturalmente, entende comandos e responde com uma voz amigável —
 
 ## 🖥️ Requisitos
 
-* Python 3.8 ou superior
+* Python 3.10
 * Microfone funcionando
 * Ollama instalado com o modelo Mistral 7B
 
@@ -34,13 +34,13 @@ Ele conversa naturalmente, entende comandos e responde com uma voz amigável —
 
 ## 📦 Instalação
 
-# Nome do Projeto (V)
+# Nome do Projeto (Dogen)
 
-[Breve descrição do que o projeto faz]
+DOGEN é um assistente virtual local desenvolvido em Python, focado em automação de tarefas, monitoramento do sistema e execução de comandos personalizados por voz ou texto — tudo rodando offline.
 
 ## Pré-requisitos
 
-Antes de começar, você vai precisar ter o Python instalado em sua máquina.
+Antes de começar, você vai precisar ter o Python 3.10 instalado em sua máquina.
 
 ## Instalação e Execução
 
@@ -48,8 +48,8 @@ Para garantir que todas as dependências sejam instaladas corretamente sem confl
 
 ### 1. Clonar o repositório
 ```bash
-git clone [https://github.com/MiguelReis944/V.git](https://github.com/MiguelReis944/V.git)
-cd V
+git clone [https://github.com/MiguelReis944/Dogen.git](https://github.com/MiguelReis944/Dogen.git)
+cd Dogen
 ```
 
 ---
@@ -108,7 +108,7 @@ python assistant.py
 ```
 
 Pronto!
-O **V** já estará ouvindo seus comandos 🎧
+O **Dogen** já estará ouvindo seus comandos 🎧
 
 ---
 
@@ -120,7 +120,7 @@ O **V** já estará ouvindo seus comandos 🎧
 * **"abra o vs code"**
   Abre o editor Visual Studio Code.
 
-* Para qualquer outro comando, o **V** responderá utilizando IA e linguagem natural.
+* Para qualquer outro comando, o **Dogen** responderá utilizando IA e linguagem natural.
 
 ---
 
