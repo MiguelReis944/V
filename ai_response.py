@@ -24,7 +24,7 @@ Regras:
 - Se não souber algo, admite naturalmente
 - Não usar emojis
 """
-    }
+    },
 ]
 
 async def ask_ai(text):

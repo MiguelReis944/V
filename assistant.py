@@ -21,9 +21,9 @@ async def main():
         action = await handle_command(text)
         
             # Comandos para sair
-        if text in ["sair", "tchau", "encerrar", "parar", "exit", "quit", "até mais"]:
+        if text in ["sair", "tchau", "encerrar", "parar","até mais"]:
             print(estilo.assistente("Até mais!"))
-            await speak("Até mais!")
+            await speak("Até mais! Fechando programa")
             break
 
         if action:

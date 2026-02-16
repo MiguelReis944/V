@@ -6,4 +6,4 @@ numpy
 pyttsx3
 torch
 torchaudio
-
+wmi

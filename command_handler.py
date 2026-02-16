@@ -35,13 +35,24 @@ async def handle_command(text):
         subprocess.Popen(f'explorer "{os.getcwd()}"')
         return "Pasta atual aberta"
     
-    if "liste arquivos" in text:
+    if "listar arquivos" in text:
         arquivos = os.listdir()
         return f"Arquivos: {', '.join(arquivos[:10])}"
+    
+    if "que dia é hoje" in text:
+        from datetime import datetime
+        agora = datetime.now().strftime("%d/%m/%Y")
+        return f"Hoje é dia {agora}"
+    
+    if "que horas são" in text:
+        from datetime import datetime
+        agora = datetime.now().strftime("%H:%M:%S")
+        return f"Agora são {agora}"
     
     if "sistema" in text:
         import platform
         import psutil
+        import wmi
         from datetime import datetime
     
         # Informações básicas
@@ -58,6 +69,14 @@ async def handle_command(text):
         # CPU
         cpu = platform.processor()
         cpu_uso = f"{psutil.cpu_percent(interval=0.1)}%"
+
+        # GPU
+        try:
+            w = wmi.WMI()
+            for gpu in w.Win32_VideoController():
+                gpu_nome = gpu.Name
+        except:
+            gpu_nome = "GPU não detectada"
     
         # Disco
         disco = psutil.disk_usage('/')
@@ -65,6 +84,7 @@ async def handle_command(text):
     
         # Data/Hora
         agora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+
     
         return f"""
          INFORMAÇÕES DO SISTEMA
@@ -73,6 +93,7 @@ async def handle_command(text):
          Sistema: {sistema} {versao}
          CPU: {cpu_uso} em uso
          Processador: {cpu}
+         GPU: {gpu_nome}
          RAM: {memoria_usada} usado de {memoria_total}
          Disco livre: {disco_livre}
          Data/Hora: {agora}
@@ -84,6 +105,7 @@ async def handle_command(text):
         import psutil
         from datetime import datetime
         from assistant import numero_comandos
+
     
         # Informações da IA
         comandos_executados = numero_comandos
@@ -95,9 +117,9 @@ async def handle_command(text):
             inicio = time.time()
             requests.get('https://www.google.com', timeout=0.3)
             ping = int((time.time() - inicio) * 1000)
-            status_rede = f"{ping} ms ( Online)"
+            status_rede = f"{ping} ms (Online)"
         except:
-            status_rede = "Falha ( Offline)"
+            status_rede = "Falha (Offline)"
     
         # Memória usada pela IA
         processo = psutil.Process()
@@ -110,7 +132,7 @@ async def handle_command(text):
          STATUS DA IA
          
          Modelo: {modelo}
-         Linguagem: Python 3.10)
+         Linguagem: Python 3.10
          Pasta: {pasta_atual}
          Comandos: {comandos_executados}
          Rede: {status_rede}
